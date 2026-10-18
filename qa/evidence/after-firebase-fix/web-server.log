@@ -1,0 +1,6 @@
+
+> web@0.0.0 preview
+> vite preview --host 127.0.0.1 --port 49601 --strictPort
+
+  ➜  Local:   http://127.0.0.1:49601/
+  ➜  press h + enter to show help

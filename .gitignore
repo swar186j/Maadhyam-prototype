@@ -1,0 +1,123 @@
+
+# Local secrets
+.env
+.env.local
+.env.*
+!.env.example
+
+# Dependencies and generated files
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+dist/
+*.pyc
+Maadhyam.zip
+Maadhyam.zip
+
+# Local deployment caches and non-portable M11 browser evidence
+.firebase/
+qa/evidence/m11-diagnostic/
+qa/evidence/m11-local/
+qa/evidence/m11-local-followup/
+qa/evidence/m11-local-final/
+qa/evidence/m11-final-regression/*
+!qa/evidence/m11-final-regression/tests.xml
+qa/evidence/m11-hosted/*
+!qa/evidence/m11-hosted/results.json
+qa/evidence/m11-cloud-run.json
+qa/evidence/m11-cloud-run-final.json
+qa/evidence/m11-lint.json
+qa/evidence/m11-quota-readiness.json
+
+# Remediation diagnostics stay local; retain portable acceptance evidence
+qa/evidence/m11-remediation-*/
+!qa/evidence/m11-remediation-green/
+qa/evidence/m11-remediation-green/*
+!qa/evidence/m11-remediation-green/tests.xml
+!qa/evidence/m11-remediation-hosted/
+qa/evidence/m11-remediation-hosted/*
+!qa/evidence/m11-remediation-hosted/results.json
+qa/evidence/m11-remediation-lint-before.json
+qa/evidence/m11-remediation-lint-after.json
+qa/evidence/m11-remediation-lint-progress.json
+qa/evidence/m11-remediation-cloud-run-before.json
+qa/evidence/m11-remediation-cloud-run-after.json
+qa/evidence/m11-remediation-registry.json
+
+# M12 raw browser profiles/screenshots and intermediate diagnostics remain local.
+qa/evidence/m12-*/
+!qa/evidence/m12-final/
+qa/evidence/m12-final/*
+!qa/evidence/m12-final/tests.xml
+!qa/evidence/m12-hosted/
+qa/evidence/m12-hosted/*
+!qa/evidence/m12-hosted/results.json
+!qa/evidence/m12-cloud/
+qa/evidence/m12-cloud/*
+!qa/evidence/m12-cloud/bucket.json
+!qa/evidence/m12-cloud/bucket-iam.json
+!qa/evidence/m12-cloud/iam-recovery.json
+!qa/evidence/m12-cloud/deployment.json
+
+# M12.1 portable release receipts; browser profiles/screenshots remain local.
+!qa/evidence/m12-1-verification/
+qa/evidence/m12-1-verification/*
+!qa/evidence/m12-1-verification/backend.xml
+!qa/evidence/m12-1-verification/browser.xml
+!qa/evidence/m12-1-verification/http.xml
+!qa/evidence/m12-1-verification/execution.json
+!qa/evidence/m12-1-verification/frontend-lint.log
+!qa/evidence/m12-1-verification/frontend-build.log
+!qa/evidence/m12-1-verification/legacy-*.json
+!qa/evidence/m12-1-verification/legacy-*.log
+
+# Catalogue release: portable receipts and intentional public UI comparisons only.
+!qa/evidence/m12-1-catalogue/
+qa/evidence/m12-1-catalogue/*
+!qa/evidence/m12-1-catalogue/backend.xml
+!qa/evidence/m12-1-catalogue/browser.xml
+!qa/evidence/m12-1-catalogue/http.xml
+!qa/evidence/m12-1-catalogue/execution.json
+!qa/evidence/m12-1-catalogue/frontend-lint.log
+!qa/evidence/m12-1-catalogue/frontend-build.log
+!qa/evidence/m12-1-catalogue/legacy-*.json
+!qa/evidence/m12-1-catalogue/legacy-*.log
+!qa/evidence/m12-1-catalogue/comparison/
+qa/evidence/m12-1-catalogue/comparison/*
+!qa/evidence/m12-1-catalogue/comparison/services-*.png
+
+# Consolidated UI release: retain portable receipts and curated public comparisons.
+qa/evidence/ui-ux-corrections/*
+!qa/evidence/ui-ux-corrections/npm-audit.json
+!qa/evidence/ui-ux-corrections/catalogue-mapping.json
+!qa/evidence/ui-ux-corrections/hosting-before.json
+!qa/evidence/ui-ux-corrections/cloud-run-before.json
+!qa/evidence/ui-ux-corrections/backend-deployed-build.json
+!qa/evidence/ui-ux-corrections/final/
+qa/evidence/ui-ux-corrections/final/*
+!qa/evidence/ui-ux-corrections/final/*.xml
+!qa/evidence/ui-ux-corrections/final/*.json
+!qa/evidence/ui-ux-corrections/final/*.log
+!qa/evidence/ui-ux-corrections/comparison/
+!qa/evidence/ui-ux-corrections/hosted/
+qa/evidence/ui-ux-corrections/hosted/*
+!qa/evidence/ui-ux-corrections/hosted/results.json
+!qa/evidence/ui-ux-corrections/hosted/*.png
+!qa/evidence/ui-ux-corrections/hosting-after.json
+!qa/evidence/ui-ux-corrections/release.json
+
+# macOS generated files
+.DS_Store
+
+# Generated QA evidence and execution logs
+qa/evidence/
+
+# Publish the final passing QA run for hackathon reviewers
+!qa/evidence/
+qa/evidence/*
+!qa/evidence/after-firebase-fix/
+qa/evidence/after-firebase-fix/*
+!qa/evidence/after-firebase-fix/*.xml
+!qa/evidence/after-firebase-fix/*.json
+!qa/evidence/after-firebase-fix/*.log

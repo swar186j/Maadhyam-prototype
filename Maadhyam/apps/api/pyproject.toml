@@ -1,0 +1,39 @@
+[project]
+name = "maadhyam-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "fastapi>=0.143.0",
+    "firebase-admin>=6.5,<8",
+    "google-cloud-firestore>=2.19,<3",
+    "google-cloud-storage>=2.19,<4",
+    "google-genai>=1.0.0,<2.0.0",
+    "httpx>=0.28.1,<1",
+    "pydantic-settings>=2.15.0",
+    "pypdf>=6.20.1",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+maadhyam-api = "maadhyam_api:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "playwright>=1.63.0",
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+]
