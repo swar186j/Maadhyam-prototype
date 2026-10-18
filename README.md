@@ -114,7 +114,7 @@ Use the URL printed by Vite. Never commit `.env`, `.env.local`, credentials or s
 | Validation | Verified outcome |
 | --- | --- |
 | Backend tests | **463 passed** |
-| Browser tests | **284 passed**, one warning |
+| Browser tests | **284 passed** |
 | Frontend lint | Passed |
 | Frontend production build | Passed |
 | Test collection | Passed |
