@@ -13,14 +13,19 @@ Citizens navigating government services may encounter differing document require
 
 ## Capabilities
 
-| Area | Prototype capabilities |
-| --- | --- |
-| Document intelligence | OCR-assisted extraction, document categorization, Indian name matching and discrepancy detection |
-| Rules and guidance | Service checklists, rules-as-code, explanatory findings and official guidance references |
-| Correction planning | Prerequisites, dependency-aware correction paths, minimum-review recommendations and proof substitution options |
-| Scenario exploration | What-if simulations, deadlines, bottlenecks and modeled cost/day/visit trade-offs |
-| Citizen experience | Service discovery, guided preparation, AI assistance and document-management workflows |
-| Multi-department foundation | Passport-focused guided journey and extensible Aadhaar/EPFO rule-pack foundations |
+| Area | What the application does |
+|---|---|
+| Document Vault | Upload PDF/PNG/JPEG samples, edit metadata, mark records self-reviewed and optionally persist files in browser-local IndexedDB. |
+| Gemini extraction | Explicitly consent to processing one fictional document through FastAPI and Vertex AI; review validated proposed fields before applying. |
+| Identity comparison | Compare Indian name variations, birth dates and addresses; inspect provisional or missing values and discrepancies. A flag does not establish which record is correct. |
+| Passport Guided Journey | Choose an assistance type, select a named household applicant or Other, answer questions and inspect source-linked document guidance. |
+| Rules-as-Code and checklists | Apply deterministic preparation rules and evidence categories; distinguish supporting-document candidates from verified official acceptance. |
+| Household Intelligence | Organize members using unique IDs, confirm document-owner associations, retain distinct people with the same relationship, and inspect prerequisite graphs and cycles. Relationships remain unverified. |
+| Resolution Planner | Turn findings and prerequisites into next steps; review target-date urgency, document expiry, blockers and dependent tasks. |
+| Advanced reasoning | Explore deadlocks, proof-substitution candidates, what-if corrections, identity/name evolution, address continuity, minimum review sets and weighted paths. Example time/cost estimates are not government commitments. |
+| Citizen workflows | Human assistance, life-event discovery, multi-department guidance, rejection diagnosis, legacy-record recovery, authority bottlenecks, deadline rescue and visit-reduction planning. These provide preparation guidance, not official system integrations. |
+| AI assistant | Preserve the floating assistant for local evidence-based guidance or optional Gemini explanations using explicitly confirmed fictional metadata. |
+| Cloud preparations | Consent to saving Passport answers, applicant details, selected document IDs and household/planner progress under a verified Firebase anonymous UID; refresh and resume the same record. File bytes are not stored in Firestore. |
 
 **Scope:** Passport is the primary guided prototype journey. Other catalogue entries or advanced workflows may be informational, simulated or marked *Coming Soon*. Planning outputs are not official government determinations.
 
