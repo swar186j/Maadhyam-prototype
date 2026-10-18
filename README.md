@@ -1,4 +1,4 @@
-# Maadhyam
+# Maadhyam (माध्यम)
 
 **AI-powered citizen assistance for navigating Indian government services**
 **Google AI Builder Cup 2026 · Working prototype**
@@ -38,19 +38,15 @@ Citizens navigating government services may encounter differing document require
 
 ## Architecture
 
-```text
-Citizen / Browser
-       |
-React + TypeScript / Vite
-       |
-       +---- Firebase authentication and configured data services
-       |
-Python FastAPI backend
-       |
-       +---- Document extraction and discrepancy analysis
-       +---- Rule packs and dependency-aware planning
-       +---- Gemini / Vertex AI integration (when configured)
-       +---- Configured cloud document/data services
+```mermaid
+flowchart TD
+  Citizen[Citizen's browser] --> Hosting[React + TypeScript on Firebase Hosting]
+  Hosting -->|Anonymous sign-in| Auth[Firebase Authentication]
+  Hosting -->|Same-origin API + Firebase ID token| API[FastAPI on Cloud Run]
+  Hosting -->|Separate local-saving consent| Vault[Browser IndexedDB Document Vault]
+  API -->|ADC / attached runtime account| Gemini[Vertex AI Gemini]
+  API -->|Verified UID-scoped records| Firestore[Firestore named database: maadhyam]
+  Hosting -->|Explicit fictional extraction consent: selected file only| API
 ```
 
 | Layer | Technology |
@@ -150,6 +146,21 @@ Browser tests require supported browser automation dependencies and frontend tes
 - [Deployment and smoke-test report](qa/FINAL_DEPLOYMENT_AND_SMOKE_TEST_REPORT.md)
 
 Review cloud permissions, billing, credentials and storage access before deployment.
+
+## Fictional citizen walkthrough
+
+1. Open the live application in a browser profile you can retain.
+2. Add fictional household members, including two distinct people with the same relationship.
+3. Upload fictional supporting documents to Document Vault.
+4. Assign exact document holders and confirm permission for associations.
+5. Review printed metadata and inspect potential name, DOB or address differences.
+6. Start a Passport preparation from My Preparations or Services.
+7. Select a household applicant, or choose Other and enter a fictional custom name.
+8. Answer the questionnaire and inspect the document checklist and source-linked guidance.
+9. Open Resolution Planner; change the personal target date and inspect dependencies and recommended actions.
+10. Use Save preparation and explicitly consent to cloud storage. Household cloud saving also has a confirmation.
+11. Refresh and resume the same record; enable separate Vault local-saving consent if the files should survive a refresh on this device.
+12. Try the floating assistant. Only enable Gemini for fictional metadata; extraction separately requires fictional-file transmission consent.
 
 ## Responsible use and limitations
 
